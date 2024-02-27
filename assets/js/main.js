@@ -43,7 +43,6 @@ $(document).ready(function () {
     draggable: false,
     swipe: false,
     touchMove: false,
-    swipeToSlide: true,
   };
 
   const gridOptions = {
@@ -58,7 +57,6 @@ $(document).ready(function () {
     draggable: true,
     swipe: true,
     touchMove: true,
-    swipeToSlide: true,
     responsive: [
       { breakpoint: 768, settings: { slidesPerRow: 2 } },
     ],
@@ -146,6 +144,8 @@ $(document).ready(function () {
   $(".products-slick").slick({
     ...gridOptions,
     draggable: false,
+    swipe: false,
+    touchMove: false,
     dotsClass: "slick-paginate",
     responsive: [
       { breakpoint: 768, settings: { slidesPerRow: 2 } },
@@ -191,8 +191,24 @@ $(document).ready(function () {
     slidesPerRow: 1,
     adaptiveHeight: false,
     draggable: false,
+    swipe: false,
+    touchMove: false,
     dotsClass: "slick-paginate",
     responsive: [],
+  });
+
+  $(".blog-list-slick").slick({
+    ...baseOptions,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    swipe: true,
+    touchMove: true,
+    dots: true,
+    dotsClass: "slick-paginate",
+    responsive: [
+      { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 576, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+    ],
   });
 
   // fix: jump to correct position after layout shifts

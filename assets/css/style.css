@@ -507,7 +507,7 @@ section.padded-v > h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: calc(var(--font-size) / 2);
-  margin-top: calc(var(--font-size) * 2);
+  margin-top: var(--font-size);
 }
 
 .slick-paginate > li > button {
@@ -1240,25 +1240,25 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
   margin-top: 2rem;
 }
 
-#hp-health-tips .hp-health-tips-item {
+#hp-health-tips .blog-link {
   transition: opacity 0.2s ease-in-out;
 }
 
-#hp-health-tips .hp-health-tips-item:is(:hover, :focus-visible) {
+#hp-health-tips .blog-link:is(:hover, :focus-visible) {
   opacity: 0.5;
 }
 
-#hp-health-tips .hp-health-tips-item > img {
+#hp-health-tips .blog-link > img {
   width: 100%;
   aspect-ratio: 3 / 2;
   border-radius: 0.5rem;
 }
 
-#hp-health-tips .hp-health-tips-meta {
+#hp-health-tips .blog-meta {
   margin: 0.5rem;
 }
 
-#hp-health-tips .hp-health-tips-date {
+#hp-health-tips .blog-date {
   font-size: 0.75rem;
 }
 
@@ -1277,11 +1277,11 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
     gap: 2rem;
   }
 
-  #hp-health-tips .hp-health-tips-date {
+  #hp-health-tips .blog-date {
     font-size: 1rem;
   }
 
-  #hp-health-tips .hp-health-tips-title {
+  #hp-health-tips .blog-title {
     font-size: 1.5rem;
   }
 
@@ -1332,7 +1332,9 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 /* -------- */
 
 #csr .csr-slick {
-  margin: 2rem -0.5rem;
+  margin-top: 2rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 
 #csr .csr-item {
@@ -1354,7 +1356,8 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 @media (min-width: 48rem) {
 
   #csr .csr-slick {
-    margin: 2rem -1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   #csr .csr-item {
@@ -1492,7 +1495,9 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 /* -------- */
 
 #factory .factory-slick {
-  margin: 2rem -0.5rem;
+  margin-top: 2rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 
 #factory .factory-item {
@@ -1507,7 +1512,8 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 @media (min-width: 48rem) {
 
   #factory .factory-slick {
-    margin: 2rem -1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   #factory .factory-item {
@@ -1587,7 +1593,7 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 
 /* -------- */
 
-#product-list .product-link {
+#product-list .product-list-item {
   padding: 1rem;
   vertical-align: top;
 }
@@ -1955,6 +1961,69 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
   #news .news-link:is(:hover, :focus-visible) .news-preview {
     visibility: visible;
     opacity: 1;
+  }
+
+}
+
+/* -------- */
+
+#pharmacist-corner {
+  padding-bottom: 0;
+}
+
+:is(#pharmacist-corner, #health-tips) .blog-list-slick {
+  margin-top: 2rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+:is(#pharmacist-corner, #health-tips) .blog-list-item {
+  padding: 0.5rem;
+}
+
+:is(#pharmacist-corner, #health-tips) .blog-link {
+  transition: opacity 0.2s ease-in-out;
+}
+
+:is(#pharmacist-corner, #health-tips) .blog-link:is(:hover, :focus-visible) {
+  opacity: 0.5;
+}
+
+:is(#pharmacist-corner, #health-tips) .blog-link > img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 0.5rem;
+}
+
+:is(#pharmacist-corner, #health-tips) .blog-meta {
+  margin: 0.5rem;
+}
+
+:is(#pharmacist-corner, #health-tips) .blog-date {
+  font-size: 0.75rem;
+}
+
+:is(#pharmacist-corner, #health-tips) .blog-excerpt {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+
+  :is(#pharmacist-corner, #health-tips) .blog-list-slick {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  :is(#pharmacist-corner, #health-tips) .blog-list-item {
+    padding: 1rem;
+  }
+
+  :is(#pharmacist-corner, #health-tips) .blog-date {
+    font-size: 1rem;
+  }
+
+  :is(#pharmacist-corner, #health-tips) .blog-title {
+    font-size: 1.5rem;
   }
 
 }
