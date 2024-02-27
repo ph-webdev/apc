@@ -192,6 +192,7 @@ $(document).ready(function () {
     adaptiveHeight: false,
     draggable: false,
     dotsClass: "slick-paginate",
+    responsive: [],
   });
 
   // fix: jump to correct position after layout shifts
