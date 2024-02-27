@@ -297,6 +297,19 @@ section.padded-v > h2 {
   color: var(--clr-white);
 }
 
+.btn-hktvmall {
+  display: flex;
+  width: fit-content;
+  padding: 0.25em 1.5em;
+  border-radius: 1000em;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--clr-hktvmall);
+  color: var(--clr-white);
+  font-size: 1.25rem;
+}
+
 :where(.btn-white, .btn-red, .btn-gradient, .btn-hktvmall) {
   transition: opacity 0.2s ease-in-out;
 }
