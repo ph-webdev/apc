@@ -21,16 +21,19 @@ $(document).ready(function () {
     ],
   };
 
-  $(".products-slick").slick("unslick");
-  const productsSlickClone = $(".products-slick").clone(true);
-  $(".products-slick").slick({
+  const productSlickOptions = {
     ...gridOptions,
+    draggable: false,
     dotsClass: "slick-paginate",
     responsive: [
       { breakpoint: 768, settings: { slidesPerRow: 2 } },
-      { breakpoint: 384, settings: { slidesPerRow: 1 } },
+      { breakpoint: 576, settings: { slidesPerRow: 1 } },
     ],
-  });
+  };
+
+  $(".products-slick").slick("unslick");
+  const productsSlickClone = $(".products-slick").clone(true);
+  $(".products-slick").slick(productSlickOptions);
 
   $(".product-filter-button").on("click", function () {
     $(".product-filter-button").removeClass("active");
@@ -45,14 +48,7 @@ $(document).ready(function () {
       });
     }
     $(".products-slick").replaceWith(productsSlickNew);
-    $(".products-slick").slick({
-      ...gridOptions,
-      dotsClass: "slick-paginate",
-      responsive: [
-        { breakpoint: 768, settings: { slidesPerRow: 2 } },
-        { breakpoint: 384, settings: { slidesPerRow: 1 } },
-      ],
-    });
+    $(".products-slick").slick(productSlickOptions);
   });
 
 });

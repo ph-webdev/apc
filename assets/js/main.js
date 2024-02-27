@@ -5,8 +5,7 @@ $(document).ready(function () {
   // utility: accordion toggle
 
   $(".accordion-toggle").on("click", function () {
-    $(this).toggleClass("active");
-    $(this).nextAll(".accordion-content-wrapper").eq(0).toggleClass("active");
+    $(this).closest(".accordion").toggleClass("active");
   });
 
   // utility: clickable dropdown toggle
@@ -39,10 +38,12 @@ $(document).ready(function () {
   const baseOptions = {
     pauseOnFocus: false,
     pauseOnHover: false,
+    waitForAnimate: false,
     arrows: false,
     draggable: false,
     swipe: false,
     touchMove: false,
+    swipeToSlide: true,
   };
 
   const gridOptions = {
@@ -51,17 +52,19 @@ $(document).ready(function () {
     adaptiveHeight: true,
     pauseOnFocus: false,
     pauseOnHover: false,
+    waitForAnimate: false,
     dots: true,
     arrows: false,
     draggable: true,
     swipe: true,
     touchMove: true,
+    swipeToSlide: true,
     responsive: [
       { breakpoint: 768, settings: { slidesPerRow: 2 } },
     ],
   };
 
-  $(".top-carousel-slick").on("init", function (slick) {
+  $(".top-carousel-slick").on("init", function (event, slick) {
     setInterval(() => {
       $(this).slick("slickGoTo", $(this).slick("slickCurrentSlide") + 2);
     }, 4000);
@@ -109,7 +112,7 @@ $(document).ready(function () {
     autoplaySpeed: 4000,
   });
 
-  $(".hp-csr-slick").on("init", function (slick) {
+  $(".hp-csr-slick").on("init", function (event, slick) {
     if ($(this).attr("data-csr-index") !== "0") {
       $(this).hide();
     }
@@ -144,18 +147,49 @@ $(document).ready(function () {
 
   $(".products-slick").slick({
     ...gridOptions,
+    draggable: false,
     dotsClass: "slick-paginate",
     responsive: [
       { breakpoint: 768, settings: { slidesPerRow: 2 } },
-      { breakpoint: 384, settings: { slidesPerRow: 1 } },
+      { breakpoint: 576, settings: { slidesPerRow: 1 } },
+    ],
+  });
+
+  $(".product-images-slick").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    $(".product-images-button").removeClass("active");
+    $(".product-images-button").eq(nextSlide).addClass("active");
+  });
+  $(".product-images-slick").slick({
+    ...baseOptions,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    draggable: true,
+    swipe: true,
+    touchMove: true,
+  });
+
+  $(".product-recommendations-slick").slick({
+    ...baseOptions,
+    centerMode: true,
+    slidesToShow: 3,
+    centerPadding: '10%',
+    draggable: true,
+    swipe: true,
+    touchMove: true,
+    responsive: [
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 576, settings: { slidesToShow: 1 } },
     ],
   });
 
   // fix: jump to correct position after layout shifts
 
   if (location.hash) {
-    const scrollTop = $(location.hash).offset().top - $("header").outerHeight();
-    $("html, body").scrollTop(scrollTop);
+    $("html, body").scrollTop(0);
+    setTimeout(() => {
+      const scrollTop = $(location.hash).offset().top - $("header").outerHeight();
+      $("html, body").scrollTop(scrollTop);
+    }, 0);
   }
 
 });
