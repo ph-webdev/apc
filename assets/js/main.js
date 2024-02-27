@@ -133,11 +133,9 @@ $(document).ready(function () {
     dotsClass: "slick-dots white",
   });
 
-  $(".csr-single-slick").each(function () {
-    $(this).slick({
-      ...baseOptions,
-      arrows: true,
-    });
+  $(".csr-single-slick").slick({
+    ...baseOptions,
+    arrows: true,
   });
 
   $(".factory-slick").slick({
@@ -180,6 +178,20 @@ $(document).ready(function () {
       { breakpoint: 768, settings: { slidesToShow: 2 } },
       { breakpoint: 576, settings: { slidesToShow: 1 } },
     ],
+  });
+
+  $(".news-list-slick").on("init", function (event, slick) {
+    if ($(this).index(".news-list-slick") !== 0) {
+      $(this).hide();
+    }
+  });
+  $(".news-list-slick").slick({
+    ...gridOptions,
+    rows: 5,
+    slidesPerRow: 1,
+    adaptiveHeight: false,
+    draggable: false,
+    dotsClass: "slick-paginate",
   });
 
   // fix: jump to correct position after layout shifts

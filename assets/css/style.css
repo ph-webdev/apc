@@ -1847,4 +1847,106 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 
 }
 
+/* -------- */
+
+#news {
+  display: grid;
+}
+
+#news h2 {
+  grid-column: 1 / -1;
+}
+
+#news .news-filter {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  align-content: start;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+#news .news-filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 2rem;
+  border: 0.0625rem solid var(--clr-red);
+  border-radius: 1000em;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#news .news-list-slick .slick-list {
+  padding-top: 8rem;
+  margin-top: -8rem;
+}
+
+#news .news-filter-button.active {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+}
+
+#news .news-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 6rem 1fr auto;
+  align-items: end;
+  gap: 4rem;
+  padding: 1rem;
+  min-height: 5rem;
+  border-bottom: 0.125rem dashed var(--clr-red);
+}
+
+#news .news-link::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background: url("../icons/icon-harpoon-right-orange-white.svg") center/100%;
+  transition: translate 0.2s ease-in-out;
+}
+
+#news .news-link:is(:hover, :focus-visible)::after {
+  translate: 1rem;
+}
+
+#news .news-date {
+  font-size: 0.75rem;
+}
+
+#news .news-title {
+  font-family: var(--ff-brand);
+}
+
+#news .news-preview {
+  position: absolute;
+  bottom: 1rem;
+  right: 4rem;
+  height: 8rem;
+  max-width: none;
+  max-height: none;
+  border-radius: 0.25rem;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+#news .news-link:is(:hover, :focus-visible) .news-preview {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (min-width: 48rem) {
+
+  #news {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  #news .news-filter {
+    grid-template-columns: auto;
+  }
+
+}
+
 /* Sections - End */
