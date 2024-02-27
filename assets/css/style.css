@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 @font-face { font-family: "MFinanceHK"; font-style: normal; font-weight: 700; src: url("../fonts/MFinance-HK-Bold.ttf") format("opentype"); }
-@font-face { font-family: "Noto Sans TC"; font-style: normal; font-weight: 400 700; src: url("../fonts/NotoSansTC-VariableFont_wght.ttf") format("opentype"); }
-@font-face { font-family: "Noto Sans SC"; font-style: normal; font-weight: 400 700; src: url("../fonts/NotoSansSC-VariableFont_wght.ttf") format("opentype"); }
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -1632,10 +1630,6 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 }
 
 /* -------- */
-
-#product {
-  margin-bottom: 2rem;
-}
 
 #product .product-images {
   padding: 2rem;
