@@ -24,6 +24,8 @@ $(document).ready(function () {
   const productSlickOptions = {
     ...gridOptions,
     draggable: false,
+    swipe: false,
+    touchMove: false,
     dotsClass: "slick-paginate",
     responsive: [
       { breakpoint: 768, settings: { slidesPerRow: 2 } },
