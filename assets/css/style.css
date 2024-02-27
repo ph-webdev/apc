@@ -2028,4 +2028,65 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 
 }
 
+/* -------- */
+
+#blog-entry h2 {
+  padding-bottom: 2rem;
+  border-bottom: 0.125rem dashed;
+  font-size: calc(var(--rfs) * 2.5);
+}
+
+#blog-entry h2 > small {
+  display: block;
+}
+
+#blog-entry .blog-cover-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  margin-top: 2rem;
+}
+
+#blog-entry .blog-content {
+  padding: 2rem 1rem;
+  border-bottom: 0.125rem dashed;
+  font-size: 0.75rem;
+}
+
+#blog-entry .blog-content :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 1.5rem;
+  font-size: 1em;
+}
+
+#blog-entry .blog-content p {
+  margin-bottom: 0.5rem;
+}
+
+#blog-entry .blog-return {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 1rem;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+#blog-entry .blog-return:is(:hover, :focus-visible) {
+  color: var(--clr-red-alt);
+}
+
+@media (min-width: 48rem) {
+
+  #blog-entry h2 > small {
+    display: inline;
+  }
+
+  #blog-entry .blog-content {
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+}
+
 /* Sections - End */
