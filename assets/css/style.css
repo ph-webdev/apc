@@ -109,6 +109,16 @@ hgroup {
   color: var(--clr-white);
   text-align: center;
 }
+@media (min-width: 48rem) {
+  hgroup {
+    padding: 2rem;
+  }
+}
+@media (min-width: 72rem) {
+  hgroup {
+    padding: 3rem;
+  }
+}
 
 hgroup > h1 {
   font-size: 1.5rem;
@@ -136,61 +146,55 @@ hr {
   border-top: 0.0625rem solid;
 }
 
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 1rem 1.5rem;
+}
+dl > dt {
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--clr-red-light);
+  color: var(--clr-white);
+  font-family: var(--ff-brand);
+  text-align: center;
+}
+
 section.red {
   background-color: var(--clr-red);
   color: var(--clr-white);
 }
-
 section.padded {
   padding: 2rem;
 }
-
 section.padded-v {
   padding: 2rem 0;
 }
-
 section.padded-v > h2 {
   margin-left: 2rem;
 }
-
 @media (min-width: 48rem) {
-
-  hgroup {
-    padding: 2rem;
-  }
-
   section.padded {
     padding: 3rem;
   }
-
   section.padded-v {
     padding: 3rem 0;
   }
-
   section.padded-v > h2 {
     margin-left: 6rem;
   }
-
 }
-
 @media (min-width: 72rem) {
-
-  hgroup {
-    padding: 3rem;
-  }
-
   section.padded {
     padding: 4rem 8rem;
   }
-
   section.padded-v {
     padding: 4rem 0;
   }
-
   section.padded-v > h2 {
     margin-left: 8rem;
   }
-
 }
 
 /* GLOBAL - End */
@@ -1096,7 +1100,7 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 
 #product-spotlight .bg-text {
   color: var(--clr-light-grey);
-  font-size: clamp(4rem, 0rem + 16.667vw, 8rem);
+  font-size: clamp(4rem, 16.667vw, 8rem);
   font-weight: 600;
   white-space: nowrap;
   opacity: 0.25;
@@ -1722,20 +1726,7 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 }
 
 #product .product-info {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  gap: 1rem 1.5rem;
-  padding: 1rem 0rem;
-}
-
-#product .product-info > dt {
-  padding: 0 1rem;
-  border-radius: 0.25rem;
-  background-color: var(--clr-red-light);
-  color: var(--clr-white);
-  font-family: var(--ff-brand);
-  text-align: center;
+  padding: 1rem 0;
 }
 
 #product .accordion {
