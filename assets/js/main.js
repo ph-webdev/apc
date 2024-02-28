@@ -168,15 +168,17 @@ $(document).ready(function () {
 
   $(".product-recommendations-slick").slick({
     ...baseOptions,
-    centerMode: true,
-    slidesToShow: 3,
-    centerPadding: '10%',
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    dots: true,
+    dotsClass: "slick-dots red",
     draggable: true,
     swipe: true,
     touchMove: true,
     responsive: [
-      { breakpoint: 768, settings: { slidesToShow: 2 } },
-      { breakpoint: 576, settings: { slidesToShow: 1 } },
+      { breakpoint: 960, settings: { slidesToShow: 3, slidesToScroll: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 576, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   });
 

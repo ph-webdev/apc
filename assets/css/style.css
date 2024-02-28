@@ -135,6 +135,12 @@ h2 > small {
   font-weight: normal;
 }
 
+h2 > small:before {
+  content: "/";
+  margin-left: 1.5ch;
+  margin-right: 1.5ch;
+}
+
 h3 {
   font-size: calc(var(--rfs) * 2);
 }
@@ -1928,7 +1934,8 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  translate: 0 1rem;
+  transition: translate 0.4s ease-in-out, visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
 @media (min-width: 48rem) {
@@ -1952,6 +1959,7 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
   #news .news-link:is(:hover, :focus-visible) .news-preview {
     visibility: visible;
     opacity: 1;
+    translate: 0;
   }
 
 }
@@ -2078,6 +2086,53 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
     font-size: 1rem;
   }
 
+}
+
+/* -------- */
+
+#business .banner {
+  margin-top: 2rem;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+}
+
+#business p {
+  max-width: 36rem;
+  margin: 1rem auto;
+}
+
+#business .email-link {
+  position: relative;
+  display: block;
+  width: min(24rem, 100%);
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem 5rem 1.5rem 2rem;
+  border: 0.0625rem solid var(--clr-red);
+  border-radius: 0.375em;
+  transition: scale 0.4s ease-in-out;
+}
+
+#business .email-link:is(:hover, :focus-visible) {
+  scale: 1.125;
+}
+
+#business .email-link > h3 {
+  font-family: var(--ff-main);
+  font-size: 1.5rem;
+}
+
+#business .email-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 1.5rem;
+  margin: auto;
+  width: 3rem;
+  height: 3rem;
+  background: url("../icons/icon-email-orange-white.svg") center/100%;
 }
 
 /* Sections - End */
