@@ -26,13 +26,16 @@ ul {
   list-style: none;
 }
 
-button {
+button, input, textarea, select {
   border: none;
   background: none;
   font: inherit;
   color: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
+}
+
+button, [type="submit"], [type="reset"] {
   cursor: pointer;
 }
 
@@ -48,6 +51,7 @@ iframe {
 
 :root {
   --clr-red: #d55332;
+  --clr-red-a25: #d553323f;
   --clr-red-alt: #ea4531;
   --clr-red-light: #f97655;
   --clr-brand1: #f6ab00;
@@ -68,13 +72,10 @@ iframe {
   --ff-brand: "MFinanceHK", sans-serif;
   --rfs: clamp(0.75rem, 0.5rem + 1.042vw, 1rem);
 }
-
 @media (min-width: 72rem) {
-
   :root {
     --header-size: 8rem;
   }
-
 }
 
 html {
@@ -102,7 +103,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   line-height: 1;
 }
-
 hgroup {
   padding: 1rem;
   background-color: var(--clr-red);
@@ -119,28 +119,23 @@ hgroup {
     padding: 3rem;
   }
 }
-
 hgroup > h1 {
   font-size: 1.5rem;
   margin-bottom: 0;
 }
-
 h2 {
   font-size: calc(var(--rfs) * 1.5);
 }
-
 h2 > small {
   font-family: var(--ff-main);
   font-size: 0.667em;
   font-weight: normal;
 }
-
 h2 > small:before {
   content: "/";
   margin-left: 1.5ch;
   margin-right: 1.5ch;
 }
-
 h3 {
   font-size: calc(var(--rfs) * 2);
 }
@@ -149,22 +144,32 @@ hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
   border: none;
-  border-top: 0.0625rem solid;
+  border-top: 0.125rem dashed;
 }
 
 dl {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 6rem 1fr;
   align-items: start;
   gap: 1rem 1.5rem;
 }
 dl > dt {
-  padding: 0 1rem;
   border-radius: 0.25rem;
   background-color: var(--clr-red-light);
   color: var(--clr-white);
   font-family: var(--ff-brand);
   text-align: center;
+}
+
+input:not([type="submit"], [type="reset"]), textarea, select {
+  width: 100%;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--clr-red-a25);
+}
+textarea {
+  min-height: calc(6em + 0.5rem);
+  resize: vertical;
 }
 
 section.red {
@@ -1767,24 +1772,22 @@ footer .legal-links ul {
   font-size: 2rem;
 }
 
-#product .product-name + hr {
-  border-top-style: dashed;
-}
-
 #product .product-desc > h2 {
   font-size: 1rem;
 }
 
-#product .product-info {
-  padding: 1rem 0;
+#product .product-desc + hr {
+  border-top: 0.0625rem solid;
 }
 
 #product .accordion {
+  margin-top: 2rem;
   border-top: 0.0625rem solid;
   border-bottom: 0.0625rem solid;
 }
 
 #product .accordion + .accordion {
+  margin-top: 0;
   border-top: none;
 }
 
@@ -1823,7 +1826,7 @@ footer .legal-links ul {
   }
 
   #product .product-info {
-    padding: 2rem 1rem;
+    padding: 0 1rem;
   }
 
 }
@@ -2093,10 +2096,6 @@ footer .legal-links ul {
   padding: 2rem 1rem;
 }
 
-#blog-entry hr {
-  border-top: 0.125rem dashed;
-}
-
 #blog-entry .blog-return {
   display: flex;
   align-items: center;
@@ -2168,6 +2167,42 @@ footer .legal-links ul {
   width: 3rem;
   height: 3rem;
   background: url("../icons/icon-email-orange-white.svg") center/100%;
+}
+
+/* -------- */
+
+#contact-us .contact-details {
+  max-width: 30rem;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact-us #gmap {
+  margin-top: 2rem;
+  aspect-ratio: 3 / 1;
+  width: 100%;
+  min-height: 16rem;
+}
+
+#contact-us .contact-form {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact-us .contact-form dl {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#contact-us .contact-form dl > dt {
+  margin-top: 0.25rem;
+}
+
+#contact-us .contact-form [type="submit"] {
+  display: flex;
+  margin-left: auto;
 }
 
 /* Sections - End */
