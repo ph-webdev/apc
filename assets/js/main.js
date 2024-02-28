@@ -33,7 +33,7 @@ $(document).ready(function () {
     $(".sp-nav-menu").toggleClass("active", !(this.pathname === location.pathname));
   });
 
-  // initialise slick carousels
+  // slick: initialise carousels
 
   const baseOptions = {
     pauseOnFocus: false,
@@ -210,6 +210,18 @@ $(document).ready(function () {
     responsive: [
       { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
       { breakpoint: 576, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+    ],
+  });
+
+  $(".advertisement-slick").slick({
+    ...gridOptions,
+    draggable: false,
+    swipe: false,
+    touchMove: false,
+    dotsClass: "slick-paginate",
+    responsive: [
+      { breakpoint: 768, settings: { slidesPerRow: 2 } },
+      { breakpoint: 576, settings: { slidesPerRow: 1 } },
     ],
   });
 

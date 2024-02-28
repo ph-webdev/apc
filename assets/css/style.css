@@ -51,9 +51,8 @@ iframe {
 
 :root {
   --clr-red: #d55332;
-  --clr-red-a25: #d553323f;
-  --clr-red-alt: #ea4531;
   --clr-red-light: #f97655;
+  --clr-red-alt: #ea4531;
   --clr-brand1: #f6ab00;
   --clr-brand2: #e4007f;
   --clr-hktvmall: #b6cd00;
@@ -63,6 +62,10 @@ iframe {
   --clr-grey: #868686;
   --clr-black: #292929;
   --clr-beige: #f2e5c4;
+
+  --clr-red-a25: #d553323f;
+  --clr-white-a50: #ffffff7f;
+  --clr-grey-a50: #8686867f;
 
   --gradient-brand: linear-gradient(to bottom right, var(--clr-brand1), var(--clr-brand2));
   --bshadow: 0 0 0.25rem #0000003f;
@@ -461,9 +464,9 @@ section.padded-v > h2 {
   transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.slick-arrow:is(:hover, :focus-visible) {
+.slick-arrow:where(:hover, :focus-visible) {
   opacity: 1;
-  background-color: #ffffff7f;
+  background-color: var(--clr-white-a50);
 }
 
 .slick-arrow.slick-prev {
@@ -528,7 +531,7 @@ section.padded-v > h2 {
   transition: background-color 0.2s ease-in-out;
 }
 
-.slick-dots > li > button:is(:hover, :focus-visible)::before,
+.slick-dots > li > button:where(:hover, :focus-visible)::before,
 .slick-dots > li.slick-active > button::before {
   background-color: var(--clr-active);
 }
@@ -544,32 +547,23 @@ section.padded-v > h2 {
 /* -------- */
 
 .slick-paginate {
-  --font-size: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: calc(var(--font-size) / 2);
-  margin-top: var(--font-size);
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .slick-paginate > li > button {
   color: var(--clr-light-grey);
   font-family: var(--ff-brand);
-  font-size: var(--font-size);
+  font-size: 1.5rem;
   transition: color 0.2s ease-in-out;
 }
 
-.slick-paginate > li > button:is(:hover, :focus-visible),
+.slick-paginate > li > button:where(:hover, :focus-visible),
 .slick-paginate > li.slick-active > button {
   color: var(--clr-red);
-}
-
-@media (min-width: 48rem) {
-
-  .slick-paginate {
-    --font-size: 1.5rem;
-  }
-
 }
 
 /* Utility - End */
@@ -579,12 +573,13 @@ section.padded-v > h2 {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: var(--header-size);
   padding: 0 1rem;
+  z-index: 1000;
+  isolation: isolate;
   transition: background-color 0.4s ease-in-out;
 }
 
@@ -816,7 +811,7 @@ header .header-logo:is(:hover, :focus-visible) {
 }
 
 .pc-nav .dropdown::after {
-  background-color: #8686865f;
+  background-color: var(--clr-grey-a50);
 }
 
 /* Header - End */
@@ -970,7 +965,6 @@ footer .legal-links ul {
 #top-carousel {
   position: relative;
   margin-bottom: 2rem;
-  isolation: isolate;
 }
 
 #top-carousel .top-carousel-title > img {
@@ -1406,7 +1400,7 @@ footer .legal-links ul {
   border-radius: 0.25rem;
 }
 
-#csr .csr-item-title {
+#csr .csr-title {
   padding: 0.5rem;
   font-family: var(--ff-brand);
   text-align: center;
@@ -1423,7 +1417,7 @@ footer .legal-links ul {
     padding: 1rem;
   }
 
-  #csr .csr-item-title {
+  #csr .csr-title {
     font-size: 1.25rem;
   }
 
@@ -1453,7 +1447,7 @@ footer .legal-links ul {
   border-bottom: 0.125rem dashed var(--clr-brand2);
 }
 
-#milestones .milestones-timeline-item-year {
+#milestones .milestones-timeline-year {
   color: var(--clr-black);
   font-family: var(--ff-brand);
   font-size: calc(var(--rfs) * 2);
@@ -1507,7 +1501,7 @@ footer .legal-links ul {
   text-align: center;
 }
 
-#awards .awards-grid-item-dropdown .dropdown-toggle {
+#awards .awards-grid-dropdown .dropdown-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1518,7 +1512,7 @@ footer .legal-links ul {
   font-size: 1rem;
 }
 
-#awards .awards-grid-item-dropdown .dropdown-content {
+#awards .awards-grid-dropdown .dropdown-content {
   width: 100%;
   max-height: 12rem;
   overflow-y: auto;
@@ -1530,11 +1524,11 @@ footer .legal-links ul {
   font-size: 0.75rem;
 }
 
-#awards .awards-grid-item-dropdown .dropdown-content > li {
+#awards .awards-grid-dropdown .dropdown-content > li {
   padding: 0.5rem;
 }
 
-#awards .awards-grid-item-dropdown .dropdown-content > li:not(:last-child) {
+#awards .awards-grid-dropdown .dropdown-content > li:not(:last-child) {
   border-bottom: 0.0625rem dashed var(--clr-light-grey);
 }
 
@@ -1982,7 +1976,7 @@ footer .legal-links ul {
   visibility: hidden;
   opacity: 0;
   translate: 0 1rem;
-  transition: translate 0.4s ease-in-out, visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition: translate 0.2s ease-in-out, visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 @media (min-width: 48rem) {
@@ -2086,6 +2080,16 @@ footer .legal-links ul {
   display: block;
 }
 
+#blog-entry h2 > small::before {
+  content: none;
+}
+
+#blog-entry h2 > small::after {
+  content: "/";
+  margin-left: 1.5ch;
+  margin-right: 1.5ch;
+}
+
 #blog-entry .blog-cover-image {
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -2145,7 +2149,7 @@ footer .legal-links ul {
   padding: 1.5rem 5rem 1.5rem 2rem;
   border: 0.0625rem solid var(--clr-red);
   border-radius: 0.375em;
-  transition: scale 0.4s ease-in-out;
+  transition: scale 0.2s ease-in-out;
 }
 
 #business .email-link:is(:hover, :focus-visible) {
@@ -2203,6 +2207,55 @@ footer .legal-links ul {
 #contact-us .contact-form [type="submit"] {
   display: flex;
   margin-left: auto;
+}
+
+/* -------- */
+
+#advertisement .advertisement-slick {
+  margin-top: 2rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+#advertisement .advertisement-item {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+#advertisement .advertisement-lightbox-button {
+  transition: opacity 0.2s ease-in-out;
+}
+
+#advertisement .advertisement-lightbox-button:is(:hover, :focus-visible) {
+  opacity: 0.5;
+}
+
+#advertisement .advertisement-thumb {
+  aspect-ratio: 3 / 2;
+  border-radius: 0.25rem;
+}
+
+#advertisement .advertisement-title {
+  padding: 0.5rem;
+  font-family: var(--ff-brand);
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+
+  #advertisement .advertisement-slick {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  #advertisement .advertisement-item {
+    padding: 1rem;
+  }
+
+  #advertisement .advertisement-title {
+    font-size: 1.25rem;
+  }
+
 }
 
 /* Sections - End */
