@@ -225,6 +225,33 @@ section.padded-v > h2 {
 
 /* -------- */
 
+.content-text {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.75rem;
+}
+
+.content-text :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1em;
+}
+
+.content-text p {
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+
+  .content-text {
+    font-size: 1rem;
+  }
+
+}
+
+/* -------- */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -795,10 +822,11 @@ footer {
   display: grid;
   grid-template-areas:
     "subs"
-    "nav "
+    "nav"
     "addr"
+    "legal"
     "logo";
-  gap: 2rem 0;
+  gap: 1rem 0;
   padding: 3rem 2rem;
   background-image: var(--gradient-brand);
   color: var(--clr-white);
@@ -860,13 +888,25 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
   opacity: 0.5;
 }
 
+footer .legal-links {
+  grid-area: legal;
+  font-size: 0.75rem;
+}
+
+footer .legal-links ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
 @media (min-width: 72rem) {
 
   footer {
     grid-template-areas:
-      "logo subs"
-      "logo addr"
-      "nav  nav ";
+      "logo  subs "
+      "logo  addr "
+      "nav   nav  "
+      "legal legal";
     grid-template-columns: repeat(2, 1fr);
     padding: 6rem 9rem 3rem 9rem;
     margin-left: 2rem;
@@ -2047,17 +2087,10 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 
 #blog-entry .blog-content {
   padding: 2rem 1rem;
-  border-bottom: 0.125rem dashed;
-  font-size: 0.75rem;
 }
 
-#blog-entry .blog-content :is(h1, h2, h3, h4, h5, h6) {
-  margin-top: 1.5rem;
-  font-size: 1em;
-}
-
-#blog-entry .blog-content p {
-  margin-bottom: 0.5rem;
+#blog-entry hr {
+  border-top: 0.125rem dashed;
 }
 
 #blog-entry .blog-return {
@@ -2066,7 +2099,6 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
   gap: 0.5em;
   width: fit-content;
   margin-left: auto;
-  margin-top: 1rem;
   font-weight: bold;
   transition: color 0.2s ease-in-out;
 }
@@ -2083,7 +2115,6 @@ footer .footer-nav > ul > li > a:is(:hover, :focus-visible) {
 
   #blog-entry .blog-content {
     padding: 2rem;
-    font-size: 1rem;
   }
 
 }
