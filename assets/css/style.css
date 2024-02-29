@@ -2390,8 +2390,8 @@ footer .legal-links ul {
 }
 
 #match-drug .symptome-button > img {
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 4.5rem;
+  height: 4.5rem;
   object-fit: contain;
 }
 
@@ -2447,8 +2447,8 @@ footer .legal-links ul {
   }
 
   #match-drug .symptome-button > img {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
   }
 
   #match-drug .matched-drug-list {
