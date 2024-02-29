@@ -1,8 +1,6 @@
 "use strict";
 
-async function initMap() {
-
-  await google.maps.importLibrary("marker");
+function initMap() {
 
   const map = new google.maps.Map(document.getElementById("gmap"), {
     mapId: "814daa32995375f0",
@@ -16,8 +14,9 @@ async function initMap() {
   geocoder.geocode({
     address: "香港新界大埔工業邨大富街12號GMP中心2及3樓",
     language: "zh-HK",
-  }, (results, status) => {
+  }, async (results, status) => {
     if (status === google.maps.GeocoderStatus.OK) {
+      await google.maps.importLibrary("marker");
       const lat = results[0].geometry.location.lat();
       const lng = results[0].geometry.location.lng();
       new google.maps.marker.AdvancedMarkerElement({
