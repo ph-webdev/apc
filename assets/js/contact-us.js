@@ -1,6 +1,8 @@
 "use strict";
 
-function initMap() {
+function initMap() {}
+
+initMap = function () {
 
   const map = new google.maps.Map(document.getElementById("gmap"), {
     mapId: "814daa32995375f0",
