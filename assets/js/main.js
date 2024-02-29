@@ -16,10 +16,12 @@ $(document).ready(function () {
 
   // header: change header style on stick
 
-  $(window).on("scroll", function () {
+  function toggleStickyHeader() {
     const isSticking = $("html").scrollTop() > 0 || $("body").scrollTop() > 0;
     $("header").toggleClass("sticking", isSticking);
-  });
+  };
+  toggleStickyHeader();
+  $(window).on("scroll", toggleStickyHeader);
 
   // header: mobile nav controls
 
@@ -79,7 +81,7 @@ $(document).ready(function () {
     ...baseOptions,
     centerMode: true,
     slidesToShow: 3,
-    centerPadding: '12.5%',
+    centerPadding: "12.5%",
     speed: 2000,
     responsive: [
       { breakpoint: 768, settings: { slidesToShow: 2 } },
@@ -223,6 +225,18 @@ $(document).ready(function () {
       { breakpoint: 768, settings: { slidesPerRow: 2 } },
       { breakpoint: 576, settings: { slidesPerRow: 1 } },
     ],
+  });
+
+  $(".where-to-buy-slick").slick({
+    ...baseOptions,
+    centerMode: true,
+    slidesToShow: 1,
+    centerPadding: "12.5%",
+    autoplay: true,
+    autoplaySpeed: 4000,
+    draggable: true,
+    swipe: true,
+    touchMove: true,
   });
 
   // fix: jump to correct position after layout shifts
