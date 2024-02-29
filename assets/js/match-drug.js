@@ -4,13 +4,13 @@ $(document).ready(function () {
 
   // match drug
 
-  $(".symptome-button").on("click", function () {
-    $(".symptome-button").removeClass("active");
+  $(".symptom-button").on("click", function () {
+    $(".symptom-button").removeClass("active");
     $(this).addClass("active");
-    const symptomeIndex = $(this).attr("data-symptome-index");
+    const symptomIndex = $(this).attr("data-symptom-index");
     $(".product-list-item").hide();
     $(".product-list-item").each(function () {
-      if ($(this).attr("data-symptome-index-list").split(",").includes(symptomeIndex)) {
+      if ($(this).attr("data-symptom-index-list").split(",").includes(symptomIndex)) {
         $(this).fadeIn();
       }
     });

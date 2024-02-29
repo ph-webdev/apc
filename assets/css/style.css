@@ -2363,7 +2363,7 @@ footer .legal-links ul {
   clip-path: polygon(0% 0%, calc(100% - 2rem) 0%, 100% 2rem, 100% 100%, 2rem 100%, 0% calc(100% - 2rem));
 }
 
-#match-drug .symptomes-list {
+#match-drug .symptoms-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 6rem);
   grid-auto-rows: 6rem;
@@ -2372,7 +2372,7 @@ footer .legal-links ul {
   padding: 1rem;
 }
 
-#match-drug .symptome-button {
+#match-drug .symptom-button {
   display: grid;
   justify-content: center;
   align-content: center;
@@ -2384,12 +2384,12 @@ footer .legal-links ul {
   transition: background-color 0.2s ease-in-out;
 }
 
-#match-drug .symptome-button:is(:hover, :focus-visible),
-#match-drug .symptome-button.active {
+#match-drug .symptom-button:is(:hover, :focus-visible),
+#match-drug .symptom-button.active {
   background-color: var(--clr-white);
 }
 
-#match-drug .symptome-button > img {
+#match-drug .symptom-button > img {
   width: 4.5rem;
   height: 4.5rem;
   object-fit: contain;
@@ -2441,12 +2441,12 @@ footer .legal-links ul {
     grid-template-columns: 3fr minmax(18rem, 1fr);
   }
 
-  #match-drug .symptomes-list {
+  #match-drug .symptoms-list {
     grid-template-columns: repeat(auto-fill, 8rem);
     grid-auto-rows: 8rem;
   }
 
-  #match-drug .symptome-button > img {
+  #match-drug .symptom-button > img {
     width: 6rem;
     height: 6rem;
   }
