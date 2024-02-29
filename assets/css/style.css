@@ -1587,7 +1587,7 @@ footer .legal-links ul {
 
 #product-filter {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: auto;
   gap: 1rem;
   padding: 2rem;
   border-bottom: 0.0625rem solid var(--clr-beige);
@@ -1595,6 +1595,7 @@ footer .legal-links ul {
 
 #product-filter .product-filter-button {
   position: relative;
+  flex-shrink: 0;
   padding: 0.75rem;
   border: 0.0625rem dashed Var(--clr-black);
   border-radius: 1000em;
