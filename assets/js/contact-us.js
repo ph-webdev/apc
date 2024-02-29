@@ -14,9 +14,8 @@ function initMap() {
   geocoder.geocode({
     address: "香港新界大埔工業邨大富街12號GMP中心2及3樓",
     language: "zh-HK",
-  }, async (results, status) => {
+  }, (results, status) => {
     if (status === google.maps.GeocoderStatus.OK) {
-      await google.maps.importLibrary("marker");
       const lat = results[0].geometry.location.lat();
       const lng = results[0].geometry.location.lng();
       new google.maps.marker.AdvancedMarkerElement({
