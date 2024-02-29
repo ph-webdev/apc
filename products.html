@@ -132,43 +132,43 @@
   </hgroup>
 
   <section id="product-filter">
-    <button type="button" class="product-filter-button active" data-category="all">
+    <button type="button" data-category-index="all" class="product-filter-button active">
       全部
       <span class="badge">12</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="flu">
+    <button type="button" data-category-index="0" class="product-filter-button">
       感冒系列
       <span class="badge">2</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="cough">
+    <button type="button" data-category-index="1" class="product-filter-button">
       化痰止咳
       <span class="badge">2</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="pain">
+    <button type="button" data-category-index="2" class="product-filter-button">
       鎮痛系列
       <span class="badge">2</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="kids">
+    <button type="button" data-category-index="3" class="product-filter-button">
       兒童系列
       <span class="badge">1</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="alimentary">
+    <button type="button" data-category-index="4" class="product-filter-button">
       護胃系列
       <span class="badge">1</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="external">
+    <button type="button" data-category-index="5" class="product-filter-button">
       外用系列
       <span class="badge">1</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="vitamin">
+    <button type="button" data-category-index="6" class="product-filter-button">
       維他命系列
       <span class="badge">1</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="antiseptics">
+    <button type="button" data-category-index="7" class="product-filter-button">
       消毒除菌
       <span class="badge">1</span>
     </button>
-    <button type="button" class="product-filter-button" data-category="alcohol">
+    <button type="button" data-category-index="8" class="product-filter-button">
       酒精系列
       <span class="badge">1</span>
     </button>
@@ -176,7 +176,7 @@
 
   <section id="product-list" class="padded">
     <ul class="products-slick">
-      <li data-category="flu" class="product-list-item">
+      <li data-category-index="0" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-1.png" class="product-image">
           <div class="product-desc">
@@ -187,7 +187,7 @@
           </div>
         </a>
       </li>
-      <li data-category="flu" class="product-list-item">
+      <li data-category-index="0" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-2.png" class="product-image">
           <div class="product-desc">
@@ -198,7 +198,7 @@
           </div>
         </a>
       </li>
-      <li data-category="cough" class="product-list-item">
+      <li data-category-index="1" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-3.png" class="product-image">
           <div class="product-desc">
@@ -209,7 +209,7 @@
           </div>
         </a>
       </li>
-      <li data-category="cough" class="product-list-item">
+      <li data-category-index="1" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-4.png" class="product-image">
           <div class="product-desc">
@@ -220,7 +220,7 @@
           </div>
         </a>
       </li>
-      <li data-category="pain" class="product-list-item">
+      <li data-category-index="2" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-5.png" class="product-image">
           <div class="product-desc">
@@ -231,7 +231,7 @@
           </div>
         </a>
       </li>
-      <li data-category="pain" class="product-list-item">
+      <li data-category-index="2" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-6.png" class="product-image">
           <div class="product-desc">
@@ -242,7 +242,7 @@
           </div>
         </a>
       </li>
-      <li data-category="kids" class="product-list-item">
+      <li data-category-index="3" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-7.png" class="product-image">
           <div class="product-desc">
@@ -253,7 +253,7 @@
           </div>
         </a>
       </li>
-      <li data-category="alimentary" class="product-list-item">
+      <li data-category-index="4" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-8.png" class="product-image">
           <div class="product-desc">
@@ -264,7 +264,7 @@
           </div>
         </a>
       </li>
-      <li data-category="external" class="product-list-item">
+      <li data-category-index="5" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-9.png" class="product-image">
           <div class="product-desc">
@@ -275,7 +275,7 @@
           </div>
         </a>
       </li>
-      <li data-category="vitamin" class="product-list-item">
+      <li data-category-index="6" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-10.png" class="product-image">
           <div class="product-desc">
@@ -286,7 +286,7 @@
           </div>
         </a>
       </li>
-      <li data-category="antiseptics" class="product-list-item">
+      <li data-category-index="7" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-11.png" class="product-image">
           <div class="product-desc">
@@ -297,7 +297,7 @@
           </div>
         </a>
       </li>
-      <li data-category="alcohol" class="product-list-item">
+      <li data-category-index="8" class="product-list-item">
         <a href="./product-single.html" class="product-link">
           <img src="./assets/images/product-12.png" class="product-image">
           <div class="product-desc">

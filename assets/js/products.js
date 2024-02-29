@@ -40,11 +40,11 @@ $(document).ready(function () {
   $(".product-filter-button").on("click", function () {
     $(".product-filter-button").removeClass("active");
     $(this).addClass("active");
-    const category = $(this).attr("data-category");
+    const categoryIndex = $(this).attr("data-category-index");
     const productsSlickNew = productsSlickClone.clone(true);
-    if (category !== "all") {
+    if (categoryIndex !== "all") {
       productsSlickNew.children().each(function () {
-        if ($(this).attr("data-category") !== category) {
+        if ($(this).attr("data-category-index") !== categoryIndex) {
           $(this).remove();
         }
       });
