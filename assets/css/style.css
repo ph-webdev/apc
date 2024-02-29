@@ -147,7 +147,7 @@ hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
   border: none;
-  border-top: 0.125rem dashed;
+  border-top: 0.125rem dashed var(--clr-red);
 }
 
 ul.dotted {
@@ -1779,7 +1779,7 @@ footer .legal-links ul {
 }
 
 #product .product-desc + hr {
-  border-top: 0.0625rem solid;
+  border-top: 0.0625rem solid var(--clr-red);
 }
 
 #product .accordion {
@@ -1930,11 +1930,6 @@ footer .legal-links ul {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-#news .news-list-slick .slick-list {
-  padding-top: 8rem;
-  margin-top: -8rem;
-}
-
 #news .news-filter-button.active {
   background-color: var(--clr-red);
   color: var(--clr-white);
@@ -1960,7 +1955,7 @@ footer .legal-links ul {
 }
 
 #news .news-link:is(:hover, :focus-visible)::after {
-  translate: 1rem;
+  translate: 0.5rem;
 }
 
 #news .news-date {
@@ -1995,6 +1990,11 @@ footer .legal-links ul {
 
   #news .news-filter {
     grid-template-columns: auto;
+  }
+
+  #news .news-list-slick .slick-list {
+    padding-top: 8rem;
+    margin-top: -8rem;
   }
 
   #news .news-link {
