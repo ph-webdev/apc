@@ -1692,7 +1692,7 @@ footer .legal-links ul {
 }
 
 #product-list .product-name,
-#product-list .product-size {
+#product-list .product-packaging {
   width: fit-content;
   padding: 0 1rem;
   margin-bottom: 0.25rem;
@@ -1882,7 +1882,7 @@ footer .legal-links ul {
 }
 
 #product-recommendations .product-name,
-#product-recommendations .product-size {
+#product-recommendations .product-packaging {
   width: fit-content;
   padding: 0 1rem;
   margin-bottom: 0.25rem;
